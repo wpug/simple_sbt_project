@@ -9,8 +9,8 @@ object MainProg {
 		val teraz = DateTime.now
 		val wigilia = (new DateTime)
 			.withYear(2014)
-            .withMonthOfYear(12)
-            .withDayOfMonth(24)
+			.withMonthOfYear(12)
+			.withDayOfMonth(24)
 
 		val doWigilii = Days.daysBetween(teraz, wigilia).getDays
 
