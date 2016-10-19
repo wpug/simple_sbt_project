@@ -14,7 +14,7 @@ class MyActor extends Actor {
 			// wysyłamy do aref pierwszą „piłeczkę”
 			aref ! Msg(true)
 		case Msg(b) =>
-			println(s"""$self: ${if (b) "ping" else "pong"}""")
+			println(s"""$self: ${if (b) "ping" else "póng"}""")
 			// wysyłamy do nadawcy komunikat z wartością !b
 			sender() ! Msg(!b)
 	}
@@ -29,7 +29,7 @@ object MainAkka {
 		val a = sys.actorOf(Props[MyActor], "A")
 		val b = sys.actorOf(Props[MyActor], "B")
 		a ! Init(b)
-		// sys.shutdown()
+		// sys.terminate()
 	}
 
 }

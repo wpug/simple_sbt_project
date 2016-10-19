@@ -2,12 +2,17 @@ name := "SbtStarter"
 
 version := "1.0"
 
-scalaVersion := "2.11.4"
+scalaVersion := "2.11.8"
 
-scalacOptions += "-deprecation"
+scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
-libraryDependencies += "com.github.nscala-time" %% "nscala-time" % "1.4.0"
+libraryDependencies ++= {
+  val nsclaTimeV = "2.14.0"
+  val akkaV = "2.4.11"
+  Seq(
+      "com.github.nscala-time" %% "nscala-time" % "2.14.0",
+      "com.typesafe.akka" %% "akka-actor" % "2.4.11"
+  )
+}
 
-libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.3.7"
-
-Revolver.settings
+javaOptions in reStart += "-Dfile.encoding=utf8"
