@@ -1,3 +1,17 @@
+## Uwagi na temat instalacji i konfiguracji SBT pod Windows
+
+Pobieramy pakiet instalacyjny (MSI) *SBT* ze strony [www.scala-sbt.org](http://www.scala-sbt.org). Po jego zainstalowaniu powinniśmy zrobić jeszcze jedną rzecz, która pozwoli nam korzystać w naszych projektach domyślnie z kodowania `UTF-8`. Oczywiście uruchamiając SBT w linii poleceń musimy też zadbać, aby konsola również używała tego kodowania. Uzyskujemy to np. wykonując w niej polecenie `chcp 65001`.
+
+Abt SBT również używało `UTF-8` musimy (jako administrator) otworzyć do edycji plik
+
+    c:\\Program Files (x86)\\sbt\\conf\\sbtconfig.txt
+
+i dodać do niego linijkę postaci:
+
+    -Dfile.encoding=UTF8
+
+Oczywiście również w projektach musimy wówczas używać tego kodowania. Przykładowy szablon projektu opisany poniżej już to zapewnia.
+
 ## Prosty przykład projektu dla SBT
 
 Repozytorium zawiera bardzo prosty przykład projektu przygotowanego do działania
@@ -39,4 +53,3 @@ Ponieważ programując z wykorzystaniem środowiska *Akka* będziemy często two
 „praca ciągła” więc wby nie tracić dostepu do linii poleceń *SBT* korzystać będziemy z wtyczki
 [sbt-revolver](https://github.com/spray/sbt-revolver). O jej mozliwościach poczytac mozna na stronie projektu.
 Najważniejsze dwa polecenia, to `reStart` i `reStop` służące do uruchamiania oraz zatrzymywania projektu.
-
