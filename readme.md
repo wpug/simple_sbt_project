@@ -17,7 +17,7 @@ Oczywiście również w projektach musimy wówczas używać kodowania `UTF-8`. P
 Repozytorium zawiera bardzo prosty przykład projektu przygotowanego do działania
 z narzędziem *SBT*.
 
-Aby sklonowac zawartość repozytorium, należy wydać polecenie
+Aby sklonować zawartość repozytorium, należy wydać polecenie
 
     git clone https://github.com/wpug/simple_sbt_project.git
 
