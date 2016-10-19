@@ -4,13 +4,13 @@ Pobieramy pakiet instalacyjny (MSI) *SBT* ze strony [www.scala-sbt.org](http://w
 
 Abt SBT również używało `UTF-8` musimy (jako administrator) otworzyć do edycji plik
 
-    c:\\Program Files (x86)\\sbt\\conf\\sbtconfig.txt
+    c:\Program Files (x86)\sbt\conf\sbtconfig.txt
 
 i dodać do niego linijkę postaci:
 
     -Dfile.encoding=UTF8
 
-Oczywiście również w projektach musimy wówczas używać tego kodowania. Przykładowy szablon projektu opisany poniżej już to zapewnia.
+Oczywiście również w projektach musimy wówczas używać kodowania `UTF-8`. Przykładowy szablon projektu opisany poniżej już to zapewnia.
 
 ## Prosty przykład projektu dla SBT
 
@@ -52,4 +52,4 @@ spowoduje, że będą one uruchamiane automatycznie po dokonaniu zmian w plikach
 Ponieważ programując z wykorzystaniem środowiska *Akka* będziemy często tworzyli kod, którego zadaniem będzie
 „praca ciągła” więc wby nie tracić dostepu do linii poleceń *SBT* korzystać będziemy z wtyczki
 [sbt-revolver](https://github.com/spray/sbt-revolver). O jej mozliwościach poczytac mozna na stronie projektu.
-Najważniejsze dwa polecenia, to `reStart` i `reStop` służące do uruchamiania oraz zatrzymywania projektu.
+Najważniejsze dwa polecenia, to `re-start` i `re-stop` służące do uruchamiania oraz zatrzymywania projektu.
