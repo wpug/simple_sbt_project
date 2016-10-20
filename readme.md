@@ -1,16 +1,3 @@
-## Uwagi na temat instalacji i konfiguracji SBT pod Windows
-
-Pobieramy pakiet instalacyjny (MSI) *SBT* ze strony [www.scala-sbt.org](http://www.scala-sbt.org). Po jego zainstalowaniu powinniśmy zrobić jeszcze jedną rzecz, która pozwoli nam korzystać w naszych projektach domyślnie z kodowania `UTF-8`. Oczywiście uruchamiając SBT w linii poleceń musimy też zadbać, aby konsola również używała tego kodowania. Uzyskujemy to np. wykonując w niej polecenie `chcp 65001`.
-
-Abt SBT również używało `UTF-8` musimy (jako administrator) otworzyć do edycji plik
-
-    c:\Program Files (x86)\sbt\conf\sbtconfig.txt
-
-i dodać do niego linijkę postaci:
-
-    -Dfile.encoding=UTF8
-
-Oczywiście również w projektach musimy wówczas używać kodowania `UTF-8`. Przykładowy szablon projektu opisany poniżej już to zapewnia.
 
 ## Prosty przykład projektu dla SBT
 
@@ -32,8 +19,8 @@ znajduje się kilka katalogów i plików.
     └───src
         └───main
             └───scala
+                  │ - MainHello.scala
                   │ - MainJoda.scala
-                  │ - MainAkka.scala
 
 Plik `build.sbt` zawiera definicję projektu (jega nazwę, numer wersji, wersje używanego kompilatora Scali) oraz
 określa jego zależności. Plik `build.properties` może zawierać wiele różnych informacji, ale w naszym przypadku
@@ -45,11 +32,30 @@ Znajdując się w katalogu projektu wydajemy polecenie
     sbt
 
 które spowoduje uruchomienie środowiska *SBT*. O jego możliwościach poczytać można na stronie
-[www.scala-sbt.org](http://www.scala-sbt.org). Między innymi pozwala ono na kompilowanie – polecenie `compile`
-i uruchamianie skompilowanego projektu – polecenie `run`. Polecenia *SBT* moga byc poprzedzone znakiem `~`, co
-spowoduje, że będą one uruchamiane automatycznie po dokonaniu zmian w plikach źródłowych.
+[www.scala-sbt.org](http://www.scala-sbt.org). Między innymi pozwala ono na kompilowanie – polecenie `compile` –
+i uruchamianie – polecenie `run` – skompilowanego projektu. Polecenia *SBT* mogą być poprzedzane znakiem `~`, co
+spowoduje, że będą one uruchamiane automatycznie po dokonaniu zmian w plikach źródłowych. Przykładowo:
 
-Ponieważ programując z wykorzystaniem środowiska *Akka* będziemy często tworzyli kod, którego zadaniem będzie
-„praca ciągła” więc wby nie tracić dostepu do linii poleceń *SBT* korzystać będziemy z wtyczki
-[sbt-revolver](https://github.com/spray/sbt-revolver). O jej mozliwościach poczytac mozna na stronie projektu.
-Najważniejsze dwa polecenia, to `re-start` i `re-stop` służące do uruchamiania oraz zatrzymywania projektu.
+    ~compile
+
+spowoduje automatyczną rekompilację kodu projektu po pojawieniu się w nim zmian.
+
+Niekiedy, zwłaszcza programując z wykorzystaniem środowiska *Akka*, zainsteresowani będziemy uruchamianiem
+naszej aplikacji w osobnej instancji JVM. W szczególności pozwoli nam to nie tracić dostępu do linii poleceń
+*SBT* w momencie, gdy aplikacja działa. Do obsługi takiego trybu uruchamiania aplikacji wykorzystamy wtyczkę
+[sbt-revolver](https://github.com/spray/sbt-revolver). O jej możliwościach poczytać można na stronie projektu.
+Najważniejsze dwa polecenia, to `re-start` i `re-stop` pozwalające na uruchamianie oraz zatrzymywanie projektu.
+
+## Uwagi na temat instalacji i konfiguracji SBT pod Windows
+
+Pobieramy pakiet instalacyjny (MSI) *SBT* ze strony [www.scala-sbt.org](http://www.scala-sbt.org). Po jego zainstalowaniu powinniśmy zrobić jeszcze jedną rzecz, która pozwoli nam korzystać w naszych projektach domyślnie z kodowania `UTF-8`. Oczywiście uruchamiając SBT w linii poleceń musimy też zadbać, aby konsola również używała tego kodowania. Uzyskujemy to np. wykonując w niej polecenie `chcp 65001`.
+
+Abt SBT również używało `UTF-8` musimy (jako administrator) otworzyć do edycji plik
+
+    c:\Program Files (x86)\sbt\conf\sbtconfig.txt
+
+i dodać do niego linijkę postaci:
+
+    -Dfile.encoding=UTF8
+
+Oczywiście również w projektach musimy wówczas używać kodowania `UTF-8`. Przykładowy szablon projektu opisany powyżej już to zapewnia.
