@@ -1,4 +1,4 @@
-object MainProg {
+object Kalendarz {
 
 	import com.github.nscala_time.time.Imports._
 	import org.joda.time.Days
@@ -8,7 +8,7 @@ object MainProg {
 		val locale = new Locale("pl","pl");
 		val teraz = DateTime.now
 		val wigilia = (new DateTime)
-			.withYear(2014)
+			.withYear(2016)
 			.withMonthOfYear(12)
 			.withDayOfMonth(24)
 
@@ -17,8 +17,8 @@ object MainProg {
 		println(s"Do Wigilii pozostało $doWigilii dni")
 
 		// bonus: jaki dzień będzie za 200 dni?
-		val terazPlus200 = teraz + 100.days
-		println(s"za 100 dni będzie ${terazPlus200.dayOfWeek().getAsText(locale)}")
+		val terazPlus100 = teraz + 100.days
+		println(s"za 100 dni będzie ${terazPlus100.dayOfWeek().getAsText(locale)}")
 
 	}
 }
