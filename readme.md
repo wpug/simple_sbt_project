@@ -24,7 +24,7 @@ znajduje się kilka katalogów i plików.
 
 Plik `build.sbt` zawiera definicję projektu (jega nazwę, numer wersji, wersje używanego kompilatora Scali) oraz
 określa jego zależności. Plik `build.properties` może zawierać wiele różnych informacji, ale w naszym przypadku
-znajduje się w nim jedynie informacja o uzywanej wersji narzędzia *SBT*. W pliku `plugins.sbt` umieszczona została
+znajduje się w nim jedynie informacja o używanej wersji narzędzia *SBT*. W pliku `plugins.sbt` umieszczona została
 informacja o zainstalowanych/wykorzystywanych w ramach projektu _wtyczkach_ do *SBT*.
 
 Znajdując się w katalogu projektu wydajemy polecenie
