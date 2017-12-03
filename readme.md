@@ -48,14 +48,6 @@ Wtyczka udostępnia dodatkowe trzy polecenia: `reStart`, `reStop` oraz `reStatus
 
 ## Uwagi na temat instalacji i konfiguracji SBT pod Windows
 
-Pobieramy pakiet instalacyjny (MSI) *SBT* ze strony [www.scala-sbt.org](http://www.scala-sbt.org). Po jego zainstalowaniu powinniśmy zrobić jeszcze jedną rzecz, która pozwoli nam korzystać w naszych projektach domyślnie z kodowania `UTF-8`. Oczywiście uruchamiając SBT w linii poleceń musimy też zadbać, aby konsola również używała tego kodowania. Uzyskujemy to np. wykonując w niej polecenie `chcp 65001`.
+Pobieramy pakiet instalacyjny (MSI) *SBT* ze strony [www.scala-sbt.org](http://www.scala-sbt.org). Po jego zainstalowaniu powinniśmy zrobić jeszcze jedną rzecz, która pozwoli nam korzystać w naszych projektach domyślnie z kodowania `UTF-8`. Uruchamiając SBT w linii poleceń musimy zadbać, aby konsola również używała tego kodowania. Uzyskujemy to np. wykonując w niej polecenie `chcp 65001`.
 
-Abt SBT również używało `UTF-8` musimy (jako administrator) otworzyć do edycji plik
-
-    c:\Program Files (x86)\sbt\conf\sbtconfig.txt
-
-i dodać do niego linijkę postaci:
-
-    -Dfile.encoding=UTF8
-
-Oczywiście również w projektach musimy wówczas używać kodowania `UTF-8`. Przykładowy szablon projektu opisany powyżej już to zapewnia.
+Oczywiście w plikach źródłowych projektu musimy wówczas również używać kodowania `UTF-8`. Przykładowy szablon projektu opisany powyżej już to zapewnia.
