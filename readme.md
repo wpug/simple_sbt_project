@@ -44,7 +44,7 @@ Niekiedy, zwłaszcza programując z wykorzystaniem środowiska *Akka*, zainstere
 naszej aplikacji w osobnej instancji JVM. W szczególności pozwoli nam to nie tracić dostępu do linii poleceń
 *SBT* w momencie, gdy aplikacja działa. Do obsługi takiego trybu uruchamiania aplikacji wykorzystamy wtyczkę
 [sbt-revolver](https://github.com/spray/sbt-revolver). O jej możliwościach poczytać można na stronie projektu.
-Najważniejsze dwa polecenia, to `re-start` i `re-stop` pozwalające na uruchamianie oraz zatrzymywanie projektu.
+Wtyczka udostępnia dodatkowe trzy polecenia: `reStart`, `reStop` oraz `reStatus` pozwalające na uruchamianie, zatrzymywanie oraz badanie stanu wykonywania się projektu.
 
 ## Uwagi na temat instalacji i konfiguracji SBT pod Windows
 
