@@ -8,7 +8,7 @@ object Kalendarz {
 		val locale = new Locale("pl","pl");
 		val teraz = DateTime.now
 		val wigilia = (new DateTime)
-			.withYear(2016)
+			.withYear(2017)
 			.withMonthOfYear(12)
 			.withDayOfMonth(24)
 
